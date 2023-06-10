@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ModelVaga = new mongoose.Schema({
+const ModelPost = new mongoose.Schema({
     
     title: {
             type: String,
@@ -10,14 +10,11 @@ const ModelVaga = new mongoose.Schema({
                   type: String,
                   required: true   
                  },
-    email: String,
-    fone: String,
-    city: String,
-
+    author: String,
     },
     {
         timestamps: true
     }
 );
 
-module.exports = mongoose.model('Vaga', ModelVaga);
+module.exports = mongoose.model('Post', ModelPost);

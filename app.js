@@ -1,14 +1,13 @@
 const express = require('express');
 const  app = express();
-const port = process.env.PORT;
-const VagaController = require('./routes/Vagas');
+const PostController = require('./routes/Posts');
 const UserController = require('./routes/Usuarios');
 const LoginController = require('./routes/Login');
 const conn = require('./src/database/connection');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 require('dotenv-safe').config();
-
+const port = process.env.PORT;
 
 app.use(cors());
 app.use(express.urlencoded({
@@ -20,13 +19,13 @@ conn();
 
 //ROTAS
 
-app.use('/api/', VagaController);
+app.use('/api/', PostController);
 app.use('/api/', UserController);
 app.use('/api/', LoginController);
 
 app.get('/', (req, res) => {
 
-    res.status(200).json({message: 'bem bindo a api'});
+    res.status(200).json({message: 'Bem-vindo a Bigsoft'});
 
 });
 
